@@ -2,17 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use App\Service\TaskService;
 use Illuminate\Http\Request;
 
 class TaskController extends Controller
 {
+    /**
+     * @var TaskService
+     */
+    private $taskService;
 
     /**
      * TaskController constructor.
+     *
+     * @param TaskService $taskService
      */
-    public function __construct()
+    public function __construct(
+        TaskService $taskService
+    )
     {
         $this->middleware('auth');
+        $this->taskService = $taskService;
     }
 
     /**
@@ -22,7 +32,8 @@ class TaskController extends Controller
      */
     public function index()
     {
-        return view('task.index');
+        dd($this->taskService->findAll());
+        return view('task.index', compact('tasks', $this->taskService->findAll()));
     }
 
     /**
@@ -43,7 +54,16 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name'        => 'required|max:255',
+            'description' => 'required',
+        ]);
+
+        dd($request);
+
+        $this->taskService->store($request->except('_token'));
+
+        return redirect('/task');
     }
 
     /**

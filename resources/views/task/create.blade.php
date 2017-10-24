@@ -9,7 +9,7 @@
                         <h4 class="panel-title text-center" style="padding: 10px;">Create a Task</h4>
                     </div>
                     <div class="panel-body">
-                        {!! Form::open(['url' => '/task', 'method' => 'post']) !!}
+                        {!! Form::open(['action' => ['TaskController@store', 'method' => 'post']]) !!}
                             <div class="form-group">
                                 {{  Form::label('Name') }}
                                 {{ Form::text('t_name', null, $attributes = ['class' => 'form-control']) }}
