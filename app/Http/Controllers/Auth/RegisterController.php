@@ -30,6 +30,13 @@ class RegisterController extends Controller
     protected $redirectTo = '/home';
 
     /**
+     * Where to redirect users after registration.
+     *
+     * @var string
+     */
+    protected $ability = 'MEMBER';
+
+    /**
      * Create a new controller instance.
      *
      * @return void
@@ -66,6 +73,7 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => bcrypt($data['password']),
+            'ability' => (!$data['ability']) ? $this->ability : $data['ability']
         ]);
     }
 }
