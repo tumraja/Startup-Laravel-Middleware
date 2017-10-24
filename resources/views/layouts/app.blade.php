@@ -11,7 +11,10 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
+    <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
     <div id="app">
@@ -28,9 +31,15 @@
                     </button>
 
                     <!-- Branding Image -->
-                    <a class="navbar-brand" href="{{ url('/') }}">
-                        {{ config('app.name', 'Laravel') }}
+                    @auth
+                        <a class="navbar-brand" href="{{ url('/home') }}">
+                            {{ config('app.name', 'Startup') }}
+                        </a>
+                    @else
+                    <a class="navbar-brand" href="{{ url('/login') }}">
+                        Startup
                     </a>
+                    @endauth
                 </div>
 
                 <div class="collapse navbar-collapse" id="app-navbar-collapse">
@@ -72,9 +81,18 @@
         </nav>
 
         @yield('content')
+
+        <footer class="footer">
+            <div class="container-fluid">
+                <div class="copyright">
+                    &copy; <script>document.write(new Date().getFullYear())</script>, <a target="_blank" href="https://github.com/tumraja">@tumraja</a>
+                </div>
+            </div>
+        </footer>
     </div>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/dashboard.js') }}"></script>
 </body>
 </html>
