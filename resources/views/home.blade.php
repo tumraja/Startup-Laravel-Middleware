@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 wrapper-box ">
+        <div class="col-md-6 wrapper-box">
             <a href="https://laravel.com/docs">Documentation</a>
         </div>
         <div class="col-md-6 wrapper-box">

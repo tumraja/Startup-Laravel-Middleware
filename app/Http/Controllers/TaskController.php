@@ -22,7 +22,8 @@ class TaskController extends Controller
         TaskService $taskService
     )
     {
-        $this->middleware('auth');
+        $this->middleware(['auth', 'member']);
+
         $this->taskService = $taskService;
     }
 
