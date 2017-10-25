@@ -56,6 +56,9 @@
                             <li><a href="{{ route('login') }}">Login</a></li>
                             <li><a href="{{ route('register') }}">Register</a></li>
                         @else
+                            @if(in_array(Auth::user()->ability, ['ADMIN', 'SUPER_ADMIN']))
+                                <li><a href="{{ url('admin/dashboard') }}">Dashboard</a></li>
+                            @endif
                             <li><a href="{{ url('task') }}">Task</a></li>
                             <li class="dropdown">
                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
@@ -87,7 +90,9 @@
         <footer class="footer">
             <div class="container-fluid">
                 <div class="copyright">
-                    &copy; <script>document.write(new Date().getFullYear())</script>, <a target="_blank" href="https://github.com/tumraja">@tumraja</a>
+                    &copy; <script>document.write(new Date().getFullYear())</script>,
+                    <a target="_blank" href="https://github.com/tumraja">GitHub: @tumraja</a>  |
+                    <a target="_blank" href="https://twitter.com/timmoraja">Twitter: @timmoraja</a>
                 </div>
             </div>
         </footer>

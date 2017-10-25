@@ -9,15 +9,5 @@
             </button>
             <a class="navbar-brand" href="#">Dashboard</a>
         </div>
-        <div class="collapse navbar-collapse">
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="#">
-                        <i class="ti-settings"></i>
-                        <p>Settings</p>
-                    </a>
-                </li>
-            </ul>
-        </div>
     </div>
 </nav>
