@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Service\TaskService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Session;
 
 class TaskController extends Controller
 {
@@ -32,8 +33,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        dd($this->taskService->findAll());
-        return view('task.index', compact('tasks', $this->taskService->findAll()));
+        return view('task.index', ['tasks' => $this->taskService->findAll()]);
     }
 
     /**
@@ -55,13 +55,11 @@ class TaskController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name'        => 'required|max:255',
-            'description' => 'required',
+            't_name'        => 'required|max:255',
+            't_description' => 'required',
         ]);
 
-        dd($request);
-
-        $this->taskService->store($request->except('_token'));
+        $this->taskService->save($request);
 
         return redirect('/task');
     }
@@ -74,7 +72,7 @@ class TaskController extends Controller
      */
     public function show($id)
     {
-        //
+        //Show a single task here.......
     }
 
     /**
@@ -85,7 +83,12 @@ class TaskController extends Controller
      */
     public function edit($id)
     {
-        return view('task.edit');
+        if ($this->taskService->findBy($id))
+        {
+            return view('task.edit', ['task' => $this->taskService->findBy($id)]);
+        }
+
+        return "not found";
     }
 
     /**
@@ -97,7 +100,16 @@ class TaskController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            't_name'        => 'required|max:255',
+            't_description' => 'required',
+        ]);
+
+        $this->taskService->updateTask($request, $id);
+
+        Session::flash('updated','Task successfully updated');
+
+        return redirect('/task');
     }
 
     /**
@@ -108,6 +120,10 @@ class TaskController extends Controller
      */
     public function destroy($id)
     {
-        //
+       $this->taskService->delete($id);
+
+        Session::flash('remove','Task successfully delete');
+
+       return redirect('/task');
     }
 }
