@@ -6,34 +6,50 @@
             <div class="col-md-12">
                 <div class="panel panel-default">
                     <div class="panel-heading">
-                        <a href="{{ url('/task/create') }}" class="btn btn-primary pull-right">Create a Task</a>
+                        <h4 class="panel-title" style="padding: 10px;">
+                            <a href="{{ route('task.create') }}" class="btn btn-primary pull-right">Create a Task</a>
+                        </h4>
                     </div>
                     <div class="panel-body">
-                        @if (session('status'))
+                        @if (session('remove'))
                             <div class="alert alert-success">
-                                {{ session('status') }}
+                                {{ session('remove') }}
                             </div>
                         @endif
 
-                        <table class="table table-bordered table-striped">
-                            <tr>
-                                <th>No.#</th>
-                                <th>Name</th>
-                                <th>Description</th>
-                                <th>Action</th>
-                            </tr>
-                            <tr>
-                                <td>
+                        @if (session('updated'))
+                            <div class="alert alert-success">
+                                {{ session('updated') }}
+                            </div>
+                        @endif
 
-                                </td>
-                                <td></td>
-                                <td></td>
-                                <td>
-                                    <a class="btn btn-success" href="">Edit</a>
-                                    <a class="btn btn-danger" href="">Delete</a>
-                                </td>
-                            </tr>
-                        </table>
+                        @if(!empty($tasks))
+                            <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>No.#</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th colspan="2">Action</th>
+                                </tr>
+                                @foreach($tasks as $task)
+                                    <tr>
+                                        <td>{{ $task->id }}</td>
+                                        <td>{{ $task->name }}</td>
+                                        <td>{{ $task->description }}</td>
+                                        <td>
+                                            <a class="btn btn-success" href="{{ route('task.edit', [$task->id]) }}">Edit</a>
+                                        </td>
+                                        <td>
+                                            {!! Form::open(['route' => ['task.destroy', $task->id], 'method' => 'delete']) !!}
+                                            {{ Form::submit('Delete', array('class' => 'btn btn-danger')) }}
+                                            {!! Form::close() !!}
+                                        </td>
+                                    </tr>
+                                @endforeach
+                            </table>
+                        @else
+                           No record
+                        @endif
                     </div>
                 </div>
             </div>

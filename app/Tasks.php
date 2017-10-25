@@ -11,7 +11,7 @@ class Tasks extends Model
      *
      * @var array
      */
-    protected $fillable = ['user_id', 'name', 'description'];
+    protected $fillable = ['name', 'description', 'user_id'];
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
      */

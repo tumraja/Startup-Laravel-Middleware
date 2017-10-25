@@ -14,6 +14,7 @@
     <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
 </head>
 <body>
