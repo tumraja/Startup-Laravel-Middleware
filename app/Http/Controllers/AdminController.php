@@ -2,18 +2,28 @@
 
 namespace App\Http\Controllers;
 
+use App\Service\AdminService;
 use Illuminate\Http\Request;
 
 class AdminController extends Controller
 {
     /**
+     * @var AdminService
+     */
+    private $adminService;
+
+    /**
      * AdminController constructor.
      *
-     * @return void
+     * @param AdminService $adminService
      */
-    public function __construct()
+    public function __construct(
+        AdminService $adminService
+    )
     {
         $this->middleware(['auth', 'admin']);
+
+        $this->adminService = $adminService;
     }
 
     /**
@@ -33,7 +43,7 @@ class AdminController extends Controller
      */
     public function listUsers()
     {
-        return view('admin.user');
+        return view('admin.user', ['users' => $this->adminService->users()]);
     }
 
     /**
@@ -60,12 +70,11 @@ class AdminController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        return view('admin.followme');
     }
 
     /**

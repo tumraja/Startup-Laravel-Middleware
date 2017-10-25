@@ -8,20 +8,70 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 wrapper-box">
-            <a href="https://laravel.com/docs">Documentation</a>
+        <div class="col-md-6 wrapper-position">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p>
+                                <a href="https://laravel.com/docs">Documentation</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 wrapper-box">
-            <a href="https://laracasts.com">Laracasts</a>
+        <div class="col-md-6 wrapper-position">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p>
+                                <a href="https://laracasts.com">Laracasts</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 wrapper-box">
-            <a href="https://laravel-news.com">News</a>
+        <div class="col-md-6 wrapper-position">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p>
+                                <a href="https://laravel-news.com">News</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 wrapper-box">
-            <a href="https://forge.laravel.com">Forge</a>
+        <div class="col-md-6 wrapper-position">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p>
+                                <a href="https://forge.laravel.com">Forge</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-6 wrapper-box">
-            <a href="https://github.com/laravel/laravel">GitHub</a>
+        <div class="col-md-6 wrapper-position">
+            <div class="card">
+                <div class="content">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <p>
+                                <a href="https://github.com/laravel/laravel">GitHub</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
