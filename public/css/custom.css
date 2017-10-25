@@ -1,9 +1,9 @@
 .wrapper-box{
-    padding: 15px;
+    padding: 20px;
     border-radius: 4px;
     border: 1px solid #5e5d5d;
     text-align: center;
     box-shadow: 1px 4px rgba(255, 255, 255, .2);
-    margin: 2px;
+    margin: 0px auto;
     background-color: #ffffff;
 }
