@@ -25,30 +25,30 @@ Getting Started
 
 #### Cloning The Repository:
 
-# Get the project
+### Get the project
 git clone https://github.com/tumraja/Startup-Laravel-Middleware.git Startup-Laravel-Middleware
 
-# Change directory
+### Change directory
 cd Startup-Laravel-Middleware
 
-# Generate application secure key (in .env file)
+### Generate application secure key (in .env file)
 php artisan key:generate
 
-# Create a database (with mysql)
-# And update .env file with database credentials
-# DB_CONNECTION=mysql
-# DB_HOST=127.0.0.1
-# DB_DATABASE=laravelmiddleware
-# DB_USERNAME=root
-# DB_PASSWORD=secret
+### Create a database (with mysql)
+- And update .env file with database credentials
+- DB_CONNECTION=mysql
+- DB_HOST=127.0.0.1
+- DB_DATABASE=laravelmiddleware
+- DB_USERNAME=root
+- DB_PASSWORD=secret
 
-# Install Composer dependencies
+### Install Composer dependencies
 composer install
 
-# Run your Authentication Quickstart
+### Run your Authentication Quickstart
 php artisan make:auth
 
-# Run your migrations
+### Run your migrations
 php artisan migrate:refresh --seed
 
 php artisan serve
@@ -58,9 +58,9 @@ Resources
 - [Laravel News](https://laravel-news.com/)
 - [Laravel Tutorials](https://laracasts.com/)
 - [Laravel Middleware](https://laravel.com/docs/5.5/middleware)
-- [Admin Dashboard influenced by Creative Team] (https://www.creative-tim.com/)
+- [Admin Dashboard influenced by Creative Team](https://creative-tim.com/)
 
-Please don't forget to follow me on twitter - https://twitter.com/timmoraja
+[Please don't forget to follow me on twitter](https://twitter.com/timmoraja)
 
 Thanks!
 
