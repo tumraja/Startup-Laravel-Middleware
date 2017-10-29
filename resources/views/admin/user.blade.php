@@ -1,41 +1,38 @@
-@extends('layouts.app')
+@extends('admin.layout')
 
 @section('content')
-    <div class="wrapper">
-        @include('admin.partials.side-navbar')
-
-        <div class="main-panel">
-            @include('admin.partials.top-navbar')
-
-            <div class="content">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-md-10">
-                        <div class="card">
-                            <div class="header">
-                                <h4 class="title">Users Members</h4>
-                            </div>
-                            <div class="content">
-                                <ul class="list-unstyled team-members">
-                                    @foreach($users as $user)
-                                        <li>
-                                            <div class="row">
-                                                <div class="col-md-5">
-                                                    {{ $user->name }}
-                                                </div>
-                                                <div class="col-md-5">
-                                                    {{ $user->ability }}
-                                                </div>
-                                            </div>
-                                        </li>
-                                    @endforeach
-                                </ul>
-                            </div>
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="header">
+                            <h4 class="title">Registered users</h4>
+                            <p class="category">List of all registered users</p>
+                        </div>
+                        <div class="content table-responsive table-full-width">
+                            <table class="table table-striped">
+                                <thead>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Ability</th>
+                                </thead>
+                                <tbody>
+                                @foreach($users as $user)
+                                    <tr>
+                                        <td>{{ $user->id }}</td>
+                                        <td>{{ $user->name }}</td>
+                                        <td>{{ $user->email }}</td>
+                                        <td>{{ $user->ability }}</td>
+                                    </tr>
+                                @endforeach
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
+     </div>
 @endsection

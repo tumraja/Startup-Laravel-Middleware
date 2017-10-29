@@ -1,12 +1,18 @@
 .wrapper-position{
-    margin: 0px auto;
+    width: 500px;
+    margin: 10px auto;
     text-align: center;
     padding: 20px;
     font-size: 25px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .wrapper-position a{
     text-decoration: none;
-    padding: 20px;
     color: #000000;
+}
+
+.footer-link{
+    padding: 20px;
 }

@@ -11,8 +11,6 @@
     <title>{{ config('app.name', 'Startup') }}</title>
 
     <!-- Styles -->
-    <link href="{{ asset('css/animate.min.css') }}" rel="stylesheet"/>
-    <link href="{{ asset('css/dashboard.css') }}" rel="stylesheet"/>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/custom.css') }}" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Muli:400,300' rel='stylesheet' type='text/css'>
@@ -89,10 +87,13 @@
 
         <footer class="footer">
             <div class="container-fluid">
-                <div class="copyright">
-                    &copy; <script>document.write(new Date().getFullYear())</script>,
-                    <a target="_blank" href="https://github.com/tumraja">GitHub: @tumraja</a>  |
-                    <a target="_blank" href="https://twitter.com/timmoraja">Twitter: @timmoraja</a>
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <div class="footer-link">
+                            &copy; <script>document.write(new Date().getFullYear())</script>,
+                            <a target="_blank" href="https://github.com/tumraja/Startup-Laravel-Middleware">GitHub Project</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </footer>
@@ -100,6 +101,5 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}"></script>
-    <script src="{{ asset('js/dashboard.js') }}"></script>
 </body>
 </html>
