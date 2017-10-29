@@ -8,11 +8,11 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-md-6 wrapper-position">
+        <div class="col-md-6">
             <div class="card">
                 <div class="content">
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-xs-12 wrapper-position">
                             <p>
                                 <a href="https://laravel.com/docs">Documentation</a>
                             </p>
@@ -21,11 +21,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 wrapper-position">
+        <div class="col-md-6">
             <div class="card">
                 <div class="content">
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-xs-12 wrapper-position">
                             <p>
                                 <a href="https://laracasts.com">Laracasts</a>
                             </p>
@@ -34,11 +34,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 wrapper-position">
+        <div class="col-md-6">
             <div class="card">
                 <div class="content">
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-xs-12 wrapper-position">
                             <p>
                                 <a href="https://laravel-news.com">News</a>
                             </p>
@@ -47,11 +47,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 wrapper-position">
+        <div class="col-md-6">
             <div class="card">
                 <div class="content">
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-xs-12 wrapper-position">
                             <p>
                                 <a href="https://forge.laravel.com">Forge</a>
                             </p>
@@ -60,11 +60,11 @@
                 </div>
             </div>
         </div>
-        <div class="col-md-6 wrapper-position">
+        <div class="col-md-6">
             <div class="card">
                 <div class="content">
                     <div class="row">
-                        <div class="col-xs-12">
+                        <div class="col-xs-12 wrapper-position">
                             <p>
                                 <a href="https://github.com/laravel/laravel">GitHub</a>
                             </p>

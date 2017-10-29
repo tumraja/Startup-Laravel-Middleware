@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Service\AdminService;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminController extends Controller
 {
@@ -75,6 +76,16 @@ class AdminController extends Controller
     public function show()
     {
         return view('admin.followme');
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function account()
+    {
+        return view('admin.account', ['user' => Auth::user()]);
     }
 
     /**

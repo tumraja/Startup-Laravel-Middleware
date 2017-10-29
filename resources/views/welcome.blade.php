@@ -37,8 +37,17 @@
 
             .top-right {
                 position: absolute;
-                right: 10px;
-                top: 18px;
+                margin: 0px auto;
+                top: 200px;
+                font-size: 70px;
+            }
+
+            .top-right > a{
+                font-weight: 600;
+                letter-spacing: .1rem;
+                text-decoration: none;
+                text-transform: uppercase;
+                color: #2b2b2b;
             }
 
             .content {
@@ -52,7 +61,7 @@
             .links > a {
                 color: #636b6f;
                 padding: 0 25px;
-                font-size: 12px;
+                font-size: 16px;
                 font-weight: 600;
                 letter-spacing: .1rem;
                 text-decoration: none;
@@ -66,14 +75,12 @@
     </head>
     <body>
         <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @endauth
-                </div>
-            @endif
-
+            <div class="top-right">
+                @guest
+                    <a href="#">Laravel Startup</a>
+                @endguest
+            </div>
+            <br><br><br>
             <div class="content">
                 <div class="links">
                     @guest
